@@ -2,6 +2,14 @@
  
  <a href="https://github.com/icanerdogan"><img src="https://r.resimlink.com/oMpRqPTd.png"></img></a>
  
+ <h2>File Directory</h2>
+ <ul>
+     <li><a href="/" title="Apache Tomcat">Apache Tomcat</a></li>
+     <li><a href="/" title="Apache Tomcat - Eclipse Bağlantısı">Apache Tomcat - Eclipse Bağlantısı</a></li>
+     <li><a href="/" title="Spring Paketlerinin İndirilmesi ve Projeye Entegrasyonu">Spring Paketlerinin İndirilmesi ve Projeye Entegrasyonu</a></li>
+ </ul>
+
+<hr>
  <h2>Apache Tomcat</h2>
  <p>Apache Tomcat, Apache Yazılım Vakfı tarafından geliştirilmiş açık kaynak bir Java Servlet Container uygulamasıdır.</p>
  
@@ -16,6 +24,8 @@
   <li> Kurulum bittikten sonra "localhost:8080" adresine gittiğinizde karşınıza aşağıdaki web site çıkacktır. Karşınıza bu ekran geliyorsa kurulumunuz başarıyla tamamlanmıştır! <br> <br> <img src="https://r.resimlink.com/4DvUjx5y.png"></img></li>
  </ol> 
  
+ <hr>
+ 
 <h2> Apache Tomcat - Eclipse Bağlantısı </h2>
   <h3><i>Kurulum</i></h3>
    <ol type="1">
@@ -29,6 +39,8 @@
   <li> Window > Show View > Other kısmına tıklıyoruz! <br> <br> <img src="https://r.resimlink.com/qT9O.png"></img></li>
   <li> Buradan Server > Servers altında "Servers" seceneğine tıklayıp, Open butonuna basıyoruz! <br> <br> <img src="https://r.resimlink.com/Ii1KW.png"></img></li>
  </ol> 
+
+<hr>
 
 <h2> Spring Paketlerinin İndirilmesi ve Projeye Entegrasyonu </h2>
   <h3><i>Kurulum</i></h3>
