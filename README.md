@@ -4,13 +4,13 @@
  
  <h2>File Directory</h2>
  <ul>
-     <li><a href="/" title="Apache Tomcat">Apache Tomcat</a></li>
-     <li><a href="/" title="Apache Tomcat - Eclipse Bağlantısı">Apache Tomcat - Eclipse Bağlantısı</a></li>
-     <li><a href="/" title="Spring Paketlerinin İndirilmesi ve Projeye Entegrasyonu">Spring Paketlerinin İndirilmesi ve Projeye Entegrasyonu</a></li>
+     <li><a href="#apache-tomcat"> Apache Tomcat</a></li>
+     <li><a href="#apache-eclipse"> Apache Tomcat - Eclipse Bağlantısı</a></li>
+     <li><a href="#spring"> Spring Paketlerinin İndirilmesi ve Projeye Entegrasyonu</a></li>
  </ul>
 
 <hr>
- <h2>Apache Tomcat</h2>
+ <h2 id="apache-tomcat">Apache Tomcat</h2>
  <p>Apache Tomcat, Apache Yazılım Vakfı tarafından geliştirilmiş açık kaynak bir Java Servlet Container uygulamasıdır.</p>
  
  <h3><i>Kurulum</i></h3>
@@ -26,7 +26,7 @@
  
  <hr>
  
-<h2> Apache Tomcat - Eclipse Bağlantısı </h2>
+<h2 id="apache-eclipse"> Apache Tomcat - Eclipse Bağlantısı </h2>
   <h3><i>Kurulum</i></h3>
    <ol type="1">
   <li> Eclipse IDE Programımızı açıyoruz.</li>
@@ -42,7 +42,7 @@
 
 <hr>
 
-<h2> Spring Paketlerinin İndirilmesi ve Projeye Entegrasyonu </h2>
+<h2 id="spring"> Spring Paketlerinin İndirilmesi ve Projeye Entegrasyonu </h2>
   <h3><i>Kurulum</i></h3>
   
   <ol type="1">
