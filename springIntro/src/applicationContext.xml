@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+    
+    <!-- Verilerimizi tutacağımız properties dosyasını oluşturuyor artık String değerleri bir dosyada toplamış oluyoruz -->
+    <!-- Artık alt kısımlarda value değerlerde bu listedeki değerleri kullanailiriz -->
+    <context:property-placeholder location="classpath:values.properties"/>
+    
+	<!-- database isimli bir istek olduğunda MySqlCustomerDal objesini çağırıyor. -->
+	<bean id="database" class="springIntro.MySqlCustomerDal">
+		<!-- Bu customerDal sınıflarını kullanırken connectionString göreceksin onun "value"sini veriyoruz dedik -->
+		<property name="connectionString" value ="database.sqlConnectionString"></property>
+	</bean>
+	
+	<bean id="service" class="springIntro.CustomerManager">
+		<!-- service ID çağırıldığında burada bulunan Manager çağıralacaktır.
+		Bu çağırılan Manager ile service işlemleri yapılacaktır. -->
+		
+		<!-- Burada CustomerManager objesi için bir CustomerDalService aldığı için bunu aşağıdaki yöntemle yapıyoruz. -->
+		<constructor-arg ref="database"></constructor-arg>
+		<!-- Görüldüğü gibi database ojesini Customer Manager içinde CustomerDalService olarak bu şekilde alıyor.-->
+	</bean>
+</beans>
+
+
+
+
+
