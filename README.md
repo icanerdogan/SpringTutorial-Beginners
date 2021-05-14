@@ -7,6 +7,7 @@
      <li><a href="#apache-tomcat"> Apache Tomcat</a></li>
      <li><a href="#apache-eclipse"> Apache Tomcat - Eclipse Bağlantısı</a></li>
      <li><a href="#spring"> Spring Paketlerinin İndirilmesi ve Projeye Entegrasyonu</a></li>
+     <li><a href="#hibernate"> Hibernate</a></li>
  </ul>
 
 <hr>
@@ -56,4 +57,22 @@
      <li> Karşımıza çıkan bu ekranda "Libraries" sekmesine gelip "Classpath"e bir kez tıklıyoruz. Yanda bulunan "Add JARs..." alanına tıklıyoruz! <br> <br> <img src="https://i.hizliresim.com/611cjuf.PNG"></img></li>
      <li> Gelen ekranda açtığımız "libs" klasörünü bulup tüm Jar dosyalarını seçiyoruz! (Shift ile ilk jar dosyasına tıklayıp ardından son jar dosyasına tıklarsanız tüm Jar dosyalarını tek seferde seçebilirsiniz!) <br> <br> <img src="https://i.hizliresim.com/a8vbuou.PNG"></img></li>
      <li> "OK" tuşuna bastıktan sonra "Apply and Close" ile ekranı kapatıp, projemizi başarıyla hazırlamış oluyoruz!</li>
+ </ol> 
+ 
+ 
+ <h2 id="hibernate"> Hibernate </h2>
+ <p>Hibernate, veritabanınızdaki tablolar ile classlar ile eşleştirip, class üzerinden veritabanındaki nesneleri ilişkilendirerek "insert", "update", "delete" ve "select" yapabilmemizi sağlıyor.
+JDBC ile yapılan tüm veritabanı sorgularını tamamen hibernate ile "generate" olarak yapılıyor.  </p>
+  <h3><i>Kurulum</i></h3>
+  
+  <ol type="1">
+     <li> https://hibernate.org/orm/releases/5.4/ adresine gidin ve görseldeki butona tıklayın! Açılan "SourceForge" penceresinde indirme otomatik olarak başlayacaktır. <br> <br> <img src="https://r.resimlink.com/igaIr.png"> </li>
+     <li> Eğer bilgisayarınızda MySQL yoksa https://dev.mysql.com/downloads/windows/installer/8.0.html buradan indirmeniz, gerekiyor! Kurulum için detaylı bir kurulum videosu izlemenizi öneririm! <br> <br> <img src="https://r.resimlink.com/5ozsQ.png"> </li>
+     <li> Eclipse IDE'mize gelip "hibernateDemo" adında proje oluşturduktan sonra projeye sağ tıklayıp New > Folder!a tıklıyoruz.<br> <br> <img src="https://r.resimlink.com/aYVEn7P.png"> </li>
+     <li> "libs" adında bir klasör oluşturuyoruz! <br> <br> <img src="https://r.resimlink.com/X1WLiVs.png"> </li>
+     <li> İndirdiğimiz hibernate klasörünü RAR'dan çıkardıktan sonra görseldeki uzantıya gidip JAR dosyalarnı kopyalıyoruz. Sonrasında projemizde oluşturduğumuz "libs" içine JAR dosyalarını yapıştırıyoruz! <br> <br> <img src="https://r.resimlink.com/uSPI.png"> </li>
+     <li> https://disk.yandex.com.tr/d/O5rimXX5yG0Shw Burada bulunan MySQL bağlantı JAR dosyasını da "libs" klasörü içine atıyoruz.<br> <br> </li>
+     <li> "libs" klasörü içinde bulunan dosyaları tanımlamak için, projemize sağ tıklayıp "properties" kısmına giriyoruz!<br> <br> <img src="https://r.resimlink.com/se3c1tgZ.png"> </li>
+     <li> Çıkan ekranda gördüğünüz adımları takip ederek "ADD Jars..." butonuna tıklıyoruz. <br> <br> <img src="https://r.resimlink.com/5NYqzh.png"> </li>
+     <li> Son olarak "hibernateDemo" içindeki JAR dosyalarını ekleyip, Apply ve sonrasına Apply&Close ile ekranı kapatıyoruz! <br> <br> <img src="https://r.resimlink.com/iFeBg4.png"> </li>
  </ol> 
