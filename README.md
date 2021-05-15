@@ -8,7 +8,20 @@
      <li><a href="#apache-eclipse"> Apache Tomcat - Eclipse Bağlantısı</a></li>
      <li><a href="#spring"> Spring Paketlerinin İndirilmesi ve Projeye Entegrasyonu</a></li>
      <li><a href="#hibernate"> Hibernate</a></li>
-     <li><a href="#hibernateproje"> Hibernate Proje Entegrasyonu</a></li>
+         <ul>
+             <li><a href="#hibernateproje">Hibernate Proje Entegrasyonu </a></li>
+         </ul>
+     <li><a href="#maven"> Maven </a></li>
+         <ul>
+             <li><a href="#maven-kurulum"> Maven Kurulumu </a></li>
+             <li><a href="#maven-entegre"> Maven Projesine Kütüphane Entegrasyonu </a></li>
+         </ul>
+     <li><a href="#spring-boot"> Spring Boot </a></li>
+         <ul>
+            <li><a href="#spring-giris"> Spring Boot : Giriş </a></li>
+            <li><a href="#spring-rest"> Spring Boot : Spring Rest </a></li>
+            <li><a href="#spring-katman"> Spring Boot : Katmanlı Mimariler </a></li>
+         </ul> 
  </ul>
 
 <hr>
@@ -60,6 +73,7 @@
      <li> "OK" tuşuna bastıktan sonra "Apply and Close" ile ekranı kapatıp, projemizi başarıyla hazırlamış oluyoruz!</li>
  </ol> 
  
+ <hr>
  
  <h2 id="hibernate"> Hibernate </h2>
  <p>Hibernate, veritabanınızdaki tablolar ile classlar ile eşleştirip, class üzerinden veritabanındaki nesneleri ilişkilendirerek "insert", "update", "delete" ve "select" yapabilmemizi sağlıyor.
@@ -86,3 +100,48 @@ JDBC ile yapılan tüm veritabanı sorgularını tamamen hibernate ile "generate
       <li> "src" dosyası içine indirdiğiniz dosyayı yapıştırın! </li>
       <li> Dosya içinde "connection.url" kısmını veritabanı adınıza göre veriryoruz, yine kullanıcı adınızı ve şifrenizi veritabanınıza göre verin! <br> <br> <img src="https://r.resimlink.com/ImMWv0.png"> </li>
  </ol>
+
+<hr>
+
+ <h2 id="maven"> Maven </h2>
+ <p>Büyük projelerde birçok Jar dosyaları vs. birçok kütüphaneden yararlanıyoruz. Proje devam ettikçe bu paket sayısı artarken, paketlere gelen güncellemelerde takip edilmesi gerekiyor. </p>
+ <ul>
+ <li>Jar dosyaları yönetilebilir.</li>
+ <li>Proje şablonları ile standart proje yönetimlerini yapabilirsiniz. </li>
+ <li>Versiyon takip sistemi de sunuyor.</li>
+ </ul>
+ <p>Biz projemize birşey eklediğimizde veya istediğimizde bunu maven ile yapıyoruz. Bu durumda maven bizim diğer kütüphaneler ile haberleşmeyi sağlıyor.</p>
+ <p>Hibernate, Spring gibi firmalar yaptıkları güncellemeleri Maven'a yükler, projeler de bu şekilde rahatlıkla güncellemeleri takip edebilir.</p>
+  <h3 id="maven-kurulum"><i>Kurulum</i></h3>
+  <ol type="1">
+      <li> Öncelikle Help > Install New Software ile maven'ı projemize eklememiz gerekiyor! <br> <br> <img src="https://r.resimlink.com/G8ZkzcD.png"<li> </li>
+      <li> Çıkan ekranda Work with kısmına 
+http://download.eclipse.org/technology/m2e/releases/ bu linki ekliyoruz ve "Add" butonua basıyoruz. "Group items by category" tikini kaldırıyoruz ve ekranda gördüğünüz "m2e" paketlerine tik koyuyoruz! Next diyip kurulumunu bitiriyoruz. <br> <br> <img src="https://r.resimlink.com/OdYo.png"> </li>
+      <li> Maven projesi oluşturmak için öncelikle File > New > Other'a tıklıyoruz!  <br> <br> <img src="https://r.resimlink.com/PKWLu.png"> </li>
+      <li> Gelen ekranda arama kısmına "maven" yazıyoruz ve "Maven Poject" kısmında tıklıyoruz. Next butonuna tıklayıp devam ediyoruz. <br> <br> <img src="https://r.resimlink.com/Gh5g.png"> </li>
+      <li> Bu ekranda çalışma alanımızı istiyorsanız değiştirebilirsiniz ancak genelde deafult olarak devam edilir! <br> <br> <img src="https://r.resimlink.com/CyWJVO.png"> </li>
+      <li> Filter kısmında "maven-archetype-quickstart" yazıp alt tarafta işaretli olan paketi seçip Next diyip devam ediyoruz! <br> <br> <img src="https://r.resimlink.com/BCVTlKMv.png"> </li>
+      <li> Bu ekranda "Group Id" şirketimizin adı, "Artifact Id" ise oluşturacağımız projenin adıdır. Örnek olarak aşağıdaki gibi oluşturup Finish ile projemizi tamamlıyoruz! <br> <br> <img src="https://r.resimlink.com/HCZ1gP5t.png"> </li>
+      <li> Oluşturduğumuz dosya içinde <b>pom.xml</b> dosyasında görüldü yere "1." yazısından sonra kullandığımız JDK sürümünü yazıyoruz. Örnek olarak ben JDK 16 sürümünü kullanıyorum.<br> <br> <img src="https://r.resimlink.com/GiKBr.png"> </li>
+      <li> Projemiz başarıyla oluşturuldu!</li>
+ </ol>
+ 
+ <h3 id="maven-entegre"><i>Maven Projesine Kütüphane Entegrasyonu</i></h3>
+  <ol type="1">
+      <li> https://mvnrepository.com adresine gidiyoruz. Bu sitede eklemek projenizde kullanmak istediğiniz kütüphanenizin "maven" içinde mevcut mu kontrol edebilirsiniz! Maven için olan dosyaları yine "dependency" kodlarıyla projenize rahatlıkla ekleyebilirsiniz! Arama kısmına projemize eklemek istediğimiz "hibernate" kütüphanesini yazıyoruz. <br> <br> <img src="https://i.hizliresim.com/fpjvv4u.PNG"> </li>
+      <li> Gelen ekranda en son final sürümünü seçebilirsiniz!<br> <br> <img src="https://i.hizliresim.com/ekhn2ey.PNG"> </li>
+      <li> İstediğiniz sürüme tıkladığınızda karşınıza "maven" dependency kod blokları gelecektir. Bu kod bloğunu kopyalıyoruz. <br> <br> <img src="https://i.hizliresim.com/8lw21q0.PNG"> </li>
+      <li> <b>pom.xml</b> içine kod bloğumuzu aşağıdaki gibi eklememiz yeterlidir!<br> <br> <img src="https://i.hizliresim.com/npzazc1.PNG"> </li>
+      <li>Dilediğiniz tüm kütüphaneler için bu adımları uygulayabilirsiniz!</li>
+ </ol>
+ 
+ <hr>
+ 
+ <h1 id="spring-boot"> Spring Boot </h1>
+  <h3><i>Çok Yakında Eklenecek :)</i></h3>
+  
+ <h2 id="spring-giris"> Spring Boot : Giriş </h2>
+
+ <h2 id="spring-rest"> Spring Boot : Spring REST </h2>
+  
+ <h2 id="spring-katman"> Spring Boot : Katmanlı Mimari</h2>
