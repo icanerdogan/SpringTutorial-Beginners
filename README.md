@@ -8,6 +8,7 @@
      <li><a href="#apache-eclipse"> Apache Tomcat - Eclipse Bağlantısı</a></li>
      <li><a href="#spring"> Spring Paketlerinin İndirilmesi ve Projeye Entegrasyonu</a></li>
      <li><a href="#hibernate"> Hibernate</a></li>
+     <li><a href="#hibernateproje"> Hibernate Proje Entegrasyonu</a></li>
  </ul>
 
 <hr>
@@ -76,3 +77,12 @@ JDBC ile yapılan tüm veritabanı sorgularını tamamen hibernate ile "generate
      <li> Çıkan ekranda gördüğünüz adımları takip ederek "ADD Jars..." butonuna tıklıyoruz. <br> <br> <img src="https://r.resimlink.com/5NYqzh.png"> </li>
      <li> Son olarak "hibernateDemo" içindeki JAR dosyalarını ekleyip, Apply ve sonrasına Apply&Close ile ekranı kapatıyoruz! <br> <br> <img src="https://r.resimlink.com/iFeBg4.png"> </li>
  </ol> 
+ 
+ 
+ <h2 id="hibernateproje"> Hibernate Proje Entegrasyonu </h2>
+  <h3><i>Kurulum</i></h3>
+  <ol type="1">
+      <li> https://disk.yandex.com.tr/d/Hv0ybf55Y8Mh-A adresine gidin! "hibernate.cfg.xml" dosyasını indirin. </li>
+      <li> "src" dosyası içine indirdiğiniz dosyayı yapıştırın! </li>
+      <li> Dosya içinde "connection.url" kısmını veritabanı adınıza göre veriryoruz, yine kullanıcı adınızı ve şifrenizi veritabanınıza göre verin! <br> <br> <img src="https://r.resimlink.com/ImMWv0.png"> </li>
+ </ol>
