@@ -1,6 +1,9 @@
 <h1 align="center"> Spring Tutorial for Beginners </h1>
- 
  <a href="https://github.com/icanerdogan"><img src="https://r.resimlink.com/oMpRqPTd.png"></img></a>
+ 
+![GitHub last commit](https://img.shields.io/github/last-commit/icanerdogan/SpringTutorial-Beginners?style=flat-square)
+![GitHub Repo stars](https://img.shields.io/github/stars/icanerdogan/SpringTutorial-Beginners?logo=Github&style=flat-square)
+![GitHub followers](https://img.shields.io/github/followers/icanerdogan?color=yellow&logo=Github&style=flat-square)
  
  <h2>File Directory</h2>
  <ul>
