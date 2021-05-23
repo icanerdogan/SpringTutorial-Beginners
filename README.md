@@ -25,6 +25,7 @@
             <li><a href="#spring-rest"> Spring Boot : Spring Rest </a></li>
             <li><a href="#spring-katman"> Spring Boot : Katmanlı Mimariler </a></li>
          </ul> 
+     <li><a href="#sosyal"> Sosyal Medya Hesaplarım </a></li>
  </ul>
 
 <hr>
@@ -141,10 +142,47 @@ http://download.eclipse.org/technology/m2e/releases/ bu linki ekliyoruz ve "Add"
  <hr>
  
  <h1 id="spring-boot"> Spring Boot </h1>
-  <h3><i>Çok Yakında Eklenecek :)</i></h3>
   
  <h2 id="spring-giris"> Spring Boot : Giriş </h2>
-
+ <h3 id="maven-kurulum"><i>Kurulum</i></h3>
+  <ol type="1">
+      <li> https://start.spring.io adresine gidiyoruz. "Dependencies" kısmına Spring Web ekliyoruz. Buraya ekleyeceğimiz dosyaları sonradan pom.xml dosyamıza https://mvnrepository.com sitesinden istediğimiz kütüphanenin dependency kodlarını bularak ekleyebiliriz. Sonrasında "Group" ile şirket adımızı, "Artifact" ile projemizin adını veriyoruz. Java kısmı karşısında JDK sürümümüzü seçiyoruz.  GENERATE butonuna tıklayın ve inen dosyası RAR içinden çıkarın! <br> <br> <img src="https://r.resimlink.com/6b3LRPx.png"> </li>
+      <li> Eclipse içinde File > Import kısmına tıklıyoruz! <br> <br> <img src="https://r.resimlink.com/YUhrmuqK.png"> </li>
+      <li> Import ekranımızda karşımıza gelen arama kutucuğuna "maven" yazıp "Existing Maven Projects" seçiyoruz. Bu şekilde var olan bir maven projesini projemize eklemeyi amaçlıyoruz! Next diyoruz!<br> <br> <img src="https://r.resimlink.com/oF4DyeK.png"> </li>
+      <li> Bu ekranda "Browse" seçeneğine tıklıyoruz! İndirdiğimiz ve RAR'dan çıkardığımız dosyamıza girip karşımıza "src" klasörünü görünceye kadar ilerliyoruz. OK butonnuna basın ve Projects altında "pom.xml" kısmı görüyorsanız doğru bir şekilde ilerlediğiniz anlamına geliyor! <br> <br> <img src="https://r.resimlink.com/0O74.png"> </li>
+      <li> Finish ile projemizi eklemiş oluyoruz!</li>
+ </ol>
+ 
  <h2 id="spring-rest"> Spring Boot : Spring REST </h2>
+  <p> Java ile Front-end(Angular, React, Vue, Mobil Uygulama) teknolojileriyle kullanıcıya buluşturulurken arka tarafta işin back-end teknolojisine Rest API denir. Burada Controller sınıfı Spring boot işlemlerinde @RestController sınıfımıza "Controller" özelliği kazandırır.</p>
   
  <h2 id="spring-katman"> Spring Boot : Katmanlı Mimari</h2>
+
+<p> <b>Data Access:</b> Veri erişim katmanımızdır. Bu katmanda sadece ver erişim işlemleri yapılır. Temel JDBC, Spring Data, Hibernate kodları buraya yazılır.
+İsimlendirmelerinde DAL veya DAO kısaltmaları kullanılır.
+
+<b>Business:</b> İş kurallarının yazıldığı katmandır. Mesela ehliyet alacak biri direksiyon, sınavdan vs. gerekli notu almış mı diye kontrol ettiğimiz if'lerin olduğu katmandır.
+İsimlendirmelerde Service ile kullanılır.
+
+<b>UI:</b> Kullanıcı arayüzümüzdür. Burası Swing, Angular, Mobile ile kullanılır.
+
+Tüm bu katmanlar birbiriyle Interface aracılığıyla haberleşir. Haberleşme Data Access ile Business ve Business ile UI arasında olur. Data Access ile UI arasında bir haberleşme olamaz çünkü kullanıcı yaptığı bir işlem direkt olarak veritabanına eklenmesi mümkün değildir. Kullanıcı UI ile yaptığı değişiklikleri Business katmanı sorgulamasını, uygunluğunu kontrol eder.</p>
+<h3><i>Kurulum</i></h3>
+<ol type="1">
+      <li> Bu kısımda tarayıcı üzerinden projemizdeki ekleme, güncelleme, silme işlemleri için https://www.postman.com/downloads/ ekranından "Postman" uygulamasını indirmeniz gerekmektedir!</li>
+      <li> "Port is already in use" hatası aldığınızda application.property dosyası içinden yaptığımız gibi port numarasını değiştirebilirsiniz! </li>
+      <li> Postman uygulamamıza giriş yapıyoruz. File > New > HTTP Request içine giriyoruz. Yeni koleksiyon oluşturuyoruz ve "Request name" kısmına bir isim veriyoruz! </li>
+      <li> <b>http://localhost:8082/api/cities</b> adresini GET ile yazıyoruz. Bu sayede tüm şehirlerimizi veritabanımızdan çekebiliyoruz. İsterseniz dosya formatını JSON olarak çekebilirsiniz! "Status: 200 OK" uyarısı işlemin başarıyla gerçekleştiğini gösterir! <br> <br> <img src="https://r.resimlink.com/39sb.png"> </li>
+      <li> <b>http://localhost:8082/api/cities/4094</b> adresine yine GET içinde yazıp SEND butonuna tıklıyoruz! Görüldüğü gibi projemizdeki tek bir şehri alma fonksiyonumuz çalıştırıyor! <br> <br> <img src="https://r.resimlink.com/p86WQ.png"> </li>
+      <li> <b>http://localhost:8082/api/add</b> linkini POST içinde yazdığımızda Body > row kısmına girip istediğimiz özelliklere sahip şehrimizi giriyoruz! ID kısmını vermiyoruz bu şekilde GeneratedValue özelliği sayesinde bize ID kısmı otomaotik şekilde üretiliyor! <br> <br> <img src="https://r.resimlink.com/P2NzcXhf.png"> </li>
+      <li> <b>http://localhost:8082/api/update</b> linkini yine POST içinde yazıyoruz ve bu sefer güncellemek istediğimiz şehrin ID'sini veriyoruz bu şekilde verilen ID'nin olduğu şehrin tüm özellikleri yeniden değiştiriliyor!<br> <br> <img src="https://r.resimlink.com/2Ic7w8d.png"> </li>
+      <li> Burada "Port is already in use" hatası aldığımızında portumuzu 8083'e taşıyoruz! http://localhost:8083/api/delete linkini POST içinde Body > raw içine JSON formatında yazıyoruz burada girdiğimiz ID'ye sahip şehir siliniyor!<br> <br> <img src="https://r.resimlink.com/1DfrGqZi.png"> </li>
+ </ol>
+
+<p> Umarım Faydalı Olmuştur, Çok teşekkür ederim!</p>
+
+<h2 id="sosyal"> Sosyal Medya Hesaplarım </h2>
+<h4> <b> <a href="https://www.linkedin.com/in/ibrahimcanerdogan/"> LINKEDIN </a> </b> </h4>
+<h4> <b> <a href="https://www.youtube.com/channel/UCevIikvuddEfPCBECo8UGLg"> YOUTUBE </a> </b> </h4>
+<h4> <b> <a href="https://github.com/icanerdogan"> GITHUB </a> </b> </h4>
+<h4> <b> <a href="https://icanerdogan.medium.com"> MEDIUM </a> </b> </h4>
